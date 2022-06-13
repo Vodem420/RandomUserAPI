@@ -1,0 +1,175 @@
+.landing{
+    &__S1{
+        background: #f8fafb;
+        @include flex(flex, center, space-between);
+        padding: 13.5rem 0 23.5rem;
+        h1{
+            font-size: 5.6rem;
+            line-height: 5.6rem;
+            font-weight: bold;
+            color: var(--ColorH1);
+        }
+        p{
+            line-height: 2.4rem;
+            color: var(--ColorGrey);
+        }
+        &__left{
+            max-width: 59rem;
+            text-align: left;
+            margin-left: 18rem;
+            > :not(:last-child){
+                margin-bottom: 1.5rem;
+            }
+            @include media(desktop){
+                margin-left: 5rem;
+            }
+            @include media(tablet){
+                max-width: 80%;
+                margin: 0 auto;
+            }
+        }
+        &__right{
+            max-width: 79rem;
+            max-height: 43rem;
+            @include media(tablet){
+                display: none;
+            }
+        }
+        img{
+            width: 100%;
+            max-height: 43rem;
+        }
+    }
+    &__S2{
+        @include flex(flex, center, space-evenly);
+        @include media(desktop){
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+        &__item{
+            width: 26rem;
+            border-radius: .6rem;
+            padding: 2rem 2rem 4.5rem;
+            background: var(--BgWhite);
+            @include flex(flex, center, center);
+            position: relative;
+            top: -12rem;
+            flex-direction: column;
+            box-shadow: 2px 8px 15px 4px rgba(0, 0, 0, 0.1);
+            @include media(desktop){
+               width: 33%;
+               margin: 2rem;
+            }
+            @include media(phone){
+                max-width: 90%;
+                width: 100%;
+            }
+            img{
+                width: 10rem;
+                height: 10rem;
+                margin-bottom: 2rem;
+            }
+            span{
+                font-size: 2.2rem;
+                line-height: 3.2rem;
+                font-weight: bold;
+                color: var(--ColorSpan);
+            }
+            p{
+                margin-top: 1.5rem;
+                line-height: 2.4rem;
+                text-align: center;
+                color: var(--ColorGrey);
+            }
+        }
+    }
+    &__S3{
+        max-width: var(--ContentWidth);
+        margin: 0 auto;
+        padding-bottom: 12rem;
+        @include media(tablet){
+            max-width: 90%;
+        }
+        &__item{
+            @include flex(flex, center, space-between);
+            @include media(phone){
+                flex-direction: column-reverse;
+            }
+            &__left{
+                max-width: 36rem;
+                > :not(:last-child){
+                    margin-bottom: 2rem;
+                }
+                @include media(phone-p-tablet){
+                    margin-right: 2rem;
+                }
+                @include media(phone){
+                    max-width: none;
+                    text-align: center;
+                }
+            }
+            &__right{
+                max-width: 30rem;
+                max-height: 30rem;
+                @include media(phone){
+                    margin-bottom: 3rem;
+                }
+            }
+            &:not(:last-child){
+                margin-bottom: 8.5rem;
+            }
+            &:nth-child(odd){
+                @include media(reverso-phone){
+                    flex-direction: row-reverse;
+                }
+                .landing__S3__item__left{
+                    @include media(phone-p-tablet){
+                        margin-right: 0;
+                        margin-left: 2rem;
+                    }
+                }
+            }
+        }
+        h2{
+            max-width: 50rem;
+            margin: 0 auto 8.5rem;
+            font-size: 5.6rem;
+            line-height: 5.6rem;
+            font-weight: bold;
+            text-align: center;
+            color: var(--ColorDarkS3);
+        }
+        span{
+            display: block;
+            font-size: 3.2rem;
+            line-height: 4rem;
+            font-weight: bold;
+            color: var(--ColorDarkS3);
+        }
+        p{
+            line-height: 2.4rem;
+            color: var(--ColorGrey);
+        }
+        img{
+            width: 100%;
+            max-height: 30rem;
+        }
+    }
+    &__S4{
+        @include flex(flex, center, center);
+        flex-direction: column;
+        background: var(--BgS4);
+        min-height: 25.5rem;
+        h2{
+            font-size: 5.6rem;
+            line-height: 5.6rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: var(--ColorWhite);
+        }
+        button{
+            background: var(--BgBtnWhite);
+            color: #00A1FF;
+        }
+    }
+}
