@@ -3,7 +3,7 @@
         <div class="landing__S1">
             <div class="landing__S1__left">
                 <button class="btn btn__secondary">Boost’in</button>
-                <h1>Hello, ...</h1>
+                <h1>Hello, {{fullUserName}}</h1>
                 <div>
                     <p>Want to accelerate Artur's benefits?</p>
                     <p> Artur's advertising option
@@ -92,3 +92,26 @@
         </div>
     </div>
 </template>
+
+<script>
+import userService from '../services/userService'
+export default{
+    data(){
+        return{
+            user: null,
+        }
+    },
+    computed: {
+        fullUserName(){
+            if(!this.user){
+                return ''
+            }
+            let {title, first, last} = this.user.name;
+            return `${title} ${first} ${last}`
+        }
+    },
+    async created(){
+        this.user = await userService.getRandomUser();
+    }
+}
+</script>
